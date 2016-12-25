@@ -61,7 +61,7 @@ DWORD Proc::getBaseAddress()
     }
     return 0;
 }
-DWORD Proc::readInt(DWORD addr, DWORD* offsets, DWORD n)
+DWORD Proc::readInt(const DWORD addr, const DWORD* offsets, const DWORD n)
 {
     DWORD address = base + addr;
     DWORD value = 0;
@@ -76,7 +76,7 @@ DWORD Proc::readInt(DWORD addr, DWORD* offsets, DWORD n)
     }
     return value;
 }
-bool Proc::isAlive()
+bool Proc::isAlive() const
 {
     return alive;
 }

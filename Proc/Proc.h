@@ -15,7 +15,7 @@ class Proc
     public:
         Proc(std::string name);
         ~Proc();
-        DWORD readInt(DWORD addr, DWORD* offsets, DWORD n);
-        bool isAlive();
+        DWORD readInt(const DWORD addr, const DWORD* offsets, const DWORD n);
+        bool isAlive() const;
 };
 #endif
