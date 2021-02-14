@@ -54,16 +54,16 @@ DWORD Proc::getBaseAddress()
                 std::string wstrModContain(pname);
                 if (wstrModName.find(wstrModContain) != std::string::npos)
                 {
-                    return (DWORD)hMods[i];
+                    return (DWORD_PTR)hMods[i];
                 }
             }
         }
     }
     return 0;
 }
-DWORD Proc::readInt(const DWORD addr, const DWORD* offsets, const DWORD n)
+DWORD Proc::readInt(const DWORD_PTR addr, const DWORD* offsets, const DWORD n)
 {
-    DWORD address = base + addr;
+    DWORD_PTR address = base + addr;
     DWORD value = 0;
     for (DWORD i = 0; i < n; i++)
     {
